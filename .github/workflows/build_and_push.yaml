@@ -20,8 +20,8 @@ jobs:
           shasum -a 256 prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl > checksum.txt
           cat checksum.txt
 
-      - name: Git LFS Pull 
-        run: git lfs pull
+      - name: check unzip 
+        run: unzip prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl
 
       - name: Log in to the Container registry
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9

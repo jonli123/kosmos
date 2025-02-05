@@ -11,7 +11,7 @@ ENV TZ=America/Los_Angeles
 WORKDIR /app
 
 # Install Python & PIP and git & wget to clone model repo and download model checkpoint
-RUN apt-get update && apt-get install -y python3.10 python3-pip git wget vim
+RUN apt-get update && apt-get install -y python3.10 python3-pip git wget vim unzip
 
 # Copy the current directory contents into the container at /app
 COPY . /app
