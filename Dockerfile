@@ -16,10 +16,9 @@ RUN apt-get update && apt-get install -y python3.10 python3-pip git wget vim unz
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-RUN pip install torch torchvision xformers
+RUN pip install torch torchvision xformers torchaudio
 # Install PyTorch Nightly Build for CUDA 12.4, dependencies for Flash Attention 2 and initial dependencies for Kosmos-2.5
-RUN pip install --pre torchaudio --index-url https://download.pytorch.org/whl/nightly/cu124 && \
-	pip install -v wheel==0.37.1 ninja==1.11.1 packaging==24.1 numpy==1.22 psutil==6.0.0 && \
+RUN pip install -v wheel==0.37.1 ninja==1.11.1 packaging==24.1 numpy==1.22 psutil==6.0.0 && \
 	pip install -v tiktoken tqdm "omegaconf<=2.1.0" boto3 iopath "fairscale==0.4" "scipy==1.10" triton flask
 
 # RUN pip install --verbose prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl --no-build-isolation

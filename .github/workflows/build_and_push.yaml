@@ -15,13 +15,16 @@ jobs:
         with: 
           lfs: true
 
-      - name: Compute SHA-256 checksum
-        run: |
-          shasum -a 256 prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl > checksum.txt
-          cat checksum.txt
+      - name: Delete huge unnecessary tools folder
+        run: rm -rf /opt/hostedtoolcache
 
-      - name: check unzip 
-        run: unzip prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl
+      # - name: Compute SHA-256 checksum
+      #   run: |
+      #     shasum -a 256 prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl > checksum.txt
+      #     cat checksum.txt
+
+      # - name: check unzip 
+      #   run: unzip prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl
 
       - name: Log in to the Container registry
         uses: docker/login-action@v3
