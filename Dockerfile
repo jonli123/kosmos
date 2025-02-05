@@ -29,7 +29,7 @@ RUN pip install -v git+https://github.com/Dod-o/kosmos2.5_tools.git@fairseq && \
 	pip install -v git+https://github.com/Dod-o/kosmos2.5_tools.git@transformers
 
 # Clone model checkpoint
-RUN wget -P /app/kosmos-2_5 https://huggingface.co/microsoft/kosmos-2.5/resolve/main/ckpt.pt
+# RUN wget -P /app/kosmos-2_5 https://huggingface.co/microsoft/kosmos-2.5/resolve/main/ckpt.pt
 
 # Create image upload directory, no error if already exists
 RUN mkdir -p /tmp
