@@ -1,5 +1,4 @@
-# Use an official Nvidia CUDA runtime as a parent image
-FROM nvidia/cuda:12.4.1-devel-ubuntu22.04
+FROM ghcr.io/jonli123/kosmos_base:latest
 
 # Avoid interactive prompts - auto-select defaults for any prompts 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -14,7 +13,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y python3.10 python3-pip git wget vim unzip
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY kosmos-2_5 /app/kosmos-2_5
 
 RUN pip install torch torchvision xformers torchaudio
 # Install PyTorch Nightly Build for CUDA 12.4, dependencies for Flash Attention 2 and initial dependencies for Kosmos-2.5
