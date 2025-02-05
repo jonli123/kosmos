@@ -22,7 +22,7 @@ RUN pip install --pre torchaudio --index-url https://download.pytorch.org/whl/ni
 	pip install -v wheel==0.37.1 ninja==1.11.1 packaging==24.1 numpy==1.22 psutil==6.0.0 && \
 	pip install -v tiktoken tqdm "omegaconf<=2.1.0" boto3 iopath "fairscale==0.4" "scipy==1.10" triton flask
 
-RUN pip install --verbose prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl --no-build-isolation
+# RUN pip install --verbose prebuilt_wheels/flash_attn-2.7.4.post1-cp310-cp310-linux_x86_64.whl --no-build-isolation
 
 # Install remaining dependencies for Kosmos-2.5 from custom repos
 RUN pip install -v git+https://github.com/Dod-o/kosmos2.5_tools.git@fairseq && \
